@@ -29,6 +29,12 @@ while running:
 
     # Move seeker randomly
     seeker.move_random()
+    
+    # Check for collision
+if player.rect.colliderect(seeker.rect):
+    print("You got caught! Restarting game...")
+    player.rect.topleft = (100, 300)  # Reset player position
+    seeker.rect.topleft = (500, 300)  # Reset seeker position
 
     # Draw characters on the screen
     player.draw(screen)
