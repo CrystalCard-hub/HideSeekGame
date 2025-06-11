@@ -4,7 +4,7 @@ from config import BACKGROUND_COLOR, WHITE
 class Menu:
     def __init__(self):
         self.font = pygame.font.Font(None, 50)
-        self.options = ["Play", "Exit"]
+        self.options = ["Play", "Settings", "Exit"]
         self.selected_index = 0
 
     def draw(self, screen):
