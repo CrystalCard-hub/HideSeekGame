@@ -7,15 +7,14 @@ class Player:
         self.rect = self.image.get_rect(topleft=(x, y))
         self.speed = 5
 
-    def move(self, keys):
-        if keys[pygame.K_w]:
-            self.rect.y -= self.speed
-        if keys[pygame.K_s]:
-            self.rect.y += self.speed
-        if keys[pygame.K_a]:
-            self.rect.x -= self.speed
-        if keys[pygame.K_d]:
-            self.rect.x += self.speed
+   def move(self, keys):
+    velocity = [0, 0]
+    if keys[pygame.K_w]: velocity[1] -= self.speed
+    if keys[pygame.K_s]: velocity[1] += self.speed
+    if keys[pygame.K_a]: velocity[0] -= self.speed
+    if keys[pygame.K_d]: velocity[0] += self.speed
+    self.rect.x += velocity[0]
+    self.rect.y += velocity[1]
 
     def draw(self, screen):
         screen.blit(self.image, self.rect)
