@@ -10,7 +10,7 @@ class Seeker:
         self.speed = SEEKER_SPEED
 
     def move(self, player):
-        """Chase player if within range, otherwise move randomly."""
+        """Chase player if close enough, otherwise move randomly."""
         distance_x = abs(self.rect.x - player.rect.x)
         distance_y = abs(self.rect.y - player.rect.y)
 
@@ -24,7 +24,7 @@ class Seeker:
             elif direction == "LEFT": self.rect.x -= self.speed
             elif direction == "RIGHT": self.rect.x += self.speed
 
-        # Boundary constraints
+        # Keep seeker inside screen boundaries
         self.rect.clamp_ip(pygame.Rect(0, 0, WIDTH, HEIGHT))
 
     def draw(self, screen):
