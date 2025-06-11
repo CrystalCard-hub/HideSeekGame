@@ -1,5 +1,5 @@
 import pygame
-from config import BLACK, WHITE
+from config import BACKGROUND_COLOR, WHITE
 
 class Menu:
     def __init__(self):
@@ -8,7 +8,7 @@ class Menu:
         self.selected_index = 0
 
     def draw(self, screen):
-        screen.fill(BLACK)
+        screen.fill(BACKGROUND_COLOR)
         for index, option in enumerate(self.options):
             color = WHITE if index == self.selected_index else (180, 180, 180)
             text = self.font.render(option, True, color)
