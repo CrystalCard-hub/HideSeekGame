@@ -1,12 +1,13 @@
 import pygame
-from config import PLAYER_SPEED, WIDTH, HEIGHT, BLUE
+from config import PLAYER_SPEED, WIDTH, HEIGHT, WHITE
 
 class Player:
     def __init__(self, x, y):
         self.image = pygame.Surface((40, 40))
-        self.image.fill(BLUE)
+        self.image.fill(WHITE)  # Player is white
         self.rect = self.image.get_rect(topleft=(x, y))
         self.speed = PLAYER_SPEED
+        self.lives = 3  # Default lives
 
     def move(self, keys):
         velocity = [0, 0]
