@@ -16,6 +16,12 @@ class Seeker:
         else:
             self.rect.x += self.speed if self.rect.x < player.rect.x else -self.speed
 
+        # Add unpredictability
+        if random.randint(0, 4) == 0:
+            self.rect.x += random.choice([-10, 10])
+        if random.randint(0, 4) == 1:
+            self.rect.y += random.choice([-10, 10])
+
         # Keep seeker inside screen boundaries
         self.rect.clamp_ip(pygame.Rect(0, 0, WIDTH, HEIGHT))
 
