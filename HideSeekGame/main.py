@@ -4,7 +4,6 @@ import random
 from player import Player
 from seeker import Seeker
 from menu import Menu
-from settings import Settings
 from config import WIDTH, HEIGHT, BACKGROUND_COLOR, WHITE, YELLOW, RED, LIFE_RED, FPS, RED_BOX_SPAWN_TIME, LIFE_DOT_REQUIREMENT
 
 pygame.init()
@@ -14,7 +13,6 @@ clock = pygame.time.Clock()
 font = pygame.font.Font(None, 40)
 
 menu = Menu()
-settings = Settings()
 player = Player(100, 300)
 seeker = Seeker(500, 300)
 
@@ -40,8 +38,6 @@ while True:
                 if action == "Play":
                     game_active = True
                     start_time = time.time()
-                elif action == "Settings":
-                    settings.draw(screen)
                 elif action == "Exit":
                     pygame.quit()
                     exit()
