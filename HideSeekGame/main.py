@@ -24,17 +24,23 @@ while True:
     
     if not game_active:
         menu.draw(screen)
-        keys = pygame.key.get_pressed()
-        action = menu.navigate(keys)
-        if action == "Play":
-            game_active = True
-            start_time = time.time()
-        elif action == "Exit":
-            break
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                exit()
+            elif event.type == pygame.KEYDOWN:
+                action = menu.navigate(event.key)
+                if action == "Play":
+                    game_active = True
+                    start_time = time.time()
+                elif action == "Exit":
+                    pygame.quit()
+                    exit()
     else:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                game_active = False
+                pygame.quit()
+                exit()
 
         keys = pygame.key.get_pressed()
         player.move(keys)
@@ -63,5 +69,3 @@ while True:
 
     pygame.display.flip()
     clock.tick(FPS)
-
-pygame.quit()
