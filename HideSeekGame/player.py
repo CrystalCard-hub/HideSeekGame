@@ -18,7 +18,7 @@ class Player:
         self.rect.x += velocity[0]
         self.rect.y += velocity[1]
 
-        # Boundary constraints
+        # Keep player inside screen boundaries
         self.rect.clamp_ip(pygame.Rect(0, 0, WIDTH, HEIGHT))
 
     def draw(self, screen):
