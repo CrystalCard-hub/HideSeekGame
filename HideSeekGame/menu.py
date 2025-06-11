@@ -14,9 +14,11 @@ class Menu:
             text = self.font.render(option, True, color)
             screen.blit(text, (550, 300 + index * 50))
 
-    def navigate(self, keys):
-        if keys[pygame.K_UP] and self.selected_index > 0:
+    def navigate(self, key):
+        if key == pygame.K_UP and self.selected_index > 0:
             self.selected_index -= 1
-        if keys[pygame.K_DOWN] and self.selected_index < len(self.options) - 1:
+        elif key == pygame.K_DOWN and self.selected_index < len(self.options) - 1:
             self.selected_index += 1
-        return self.options[self.selected_index] if keys[pygame.K_RETURN] else None
+        elif key == pygame.K_RETURN:
+            return self.options[self.selected_index]  # Return selected option
+        return None
