@@ -23,6 +23,7 @@ seeker = Seeker(500, 300)
 running = True
 while running:
     screen.fill((255, 255, 255))
+    print("Game started successfully!")  
 
     # Event handling
     for event in pygame.event.get():
