@@ -61,7 +61,7 @@ while True:
             if player.rect.colliderect(dot):
                 yellow_dots.remove(dot)
                 red_dots.append(pygame.Rect(dot.x, dot.y, 10, 10))  # Convert to red dot
-            elif time.time() - dot_timer.get(dot, time.time()) > RED_BOX_SPAWN_TIME:
+            elif time.time() - dot_timer.get((dot.x, dot.y), time.time()) > RED_BOX_SPAWN_TIME:
                 yellow_dots.remove(dot)
                 red_boxes.append(pygame.Rect(dot.x, dot.y, 30, 30))  # Convert to red box
 
