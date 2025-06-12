@@ -1,4 +1,4 @@
 # HideSeekGame
 
 
-THIS IS A TEST ONLY!
+You Can Play it Now!
