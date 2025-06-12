@@ -1,4 +1,4 @@
 # HideSeekGame
 
 
-You Can Play it Now!
+You can play it with powershell ( python main.py )
